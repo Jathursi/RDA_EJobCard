@@ -286,21 +286,21 @@ const OtherMockData = async () => {
 
         const otherOtherData = [
             {
-                Other: 'OtherOther 1',
-                Other_cost: 1100,
-                OtherQ: 110,
-                Other_Sup: 'Supplier 11',
-                Other_date: '2023-10-11',
-                Other_Auth: 'Auth 11',
+                other: 'OtherOther 1',
+                other_cost: 1100,
+                otherQ: 110,
+                other_Sup: 'Supplier 11',
+                other_date: '2023-10-11',
+                other_Auth: 'Auth 11',
                 other_id: otherRecords[0].id
             },
             {
-                Other: 'OtherOther 2',
-                Other_cost: 1200,
-                OtherQ: 120,
-                Other_Sup: 'Supplier 12',
-                Other_date: '2023-10-12',
-                Other_Auth: 'Auth 12',
+                other: 'OtherOther 2',
+                other_cost: 1200,
+                otherQ: 120,
+                other_Sup: 'Supplier 12',
+                other_date: '2023-10-12',
+                other_Auth: 'Auth 12',
                 other_id: otherRecords[1].id
             }
         ];

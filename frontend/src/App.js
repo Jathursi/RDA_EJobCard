@@ -10,7 +10,7 @@ import Dash from './Main/Dash';
 import Implement from './Outlet/Implement';
 import Estimation from './Outlet/Estimation';
 import Completion from './Outlet/Completion';
-import Others from './Outlet/Others';
+import Others from './Outlet/Others'; 
 import Suppliment from './Outlet/Suppliment';
 import OutSource from './Outlet/OutSource';
 import Initial from './Images/Initial';

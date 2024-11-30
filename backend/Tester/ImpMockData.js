@@ -11,10 +11,24 @@ const ImpMockData = async () => {
         // Prepare mock data for Implement table
         const implementData = [
             {
-                book_id: 1
+                book_id: 1,
+                Start_Date: '2021-09-01',
+                Job_Assigned: 'John',
+                Req_date: '2021-09-02',
+                Req_off: 'Jane',
+                supplier: 'Supplier 1',
+                Vaucher: 1111,
+                Auth: 'Mr. John',
             },
             {
-                book_id: 2
+                book_id: 2,
+                Start_Date: '2021-09-02',
+                Job_Assigned: 'Jane',
+                Req_date: '2021-09-03',
+                Req_off: 'John',
+                supplier: 'Supplier 2',
+                Vaucher: 2222,
+                Auth: 'Miss Jane',
             }
         ];
 
@@ -42,14 +56,14 @@ const ImpMockData = async () => {
                 Material: 'Material 1',
                 Mat_cost: 300,
                 MatQ: 30,
-                issued: '2023-10-01',
+                issued: 4,
                 implement_id: implementRecords[0].id
             },
             {
                 Material: 'Material 2',
                 Mat_cost: 400,
                 MatQ: 40,
-                issued: '2023-10-02',
+                issued: 12,
                 implement_id: implementRecords[1].id
             }
         ];

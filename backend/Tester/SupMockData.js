@@ -158,15 +158,15 @@ const SupMockData = async () => {
 
         const otherData = [
             {
-                Other: 'Other 1',
-                Other_cost: 1500,
-                OtherQ: 150,
+                other: 'Other 1',
+                other_cost: 1500,
+                otherQ: 150,
                 SupplierId: supplementRecords[0].id
             },
             {
-                Other: 'Other 2',
-                Other_cost: 1600,
-                OtherQ: 160,
+                other: 'Other 2',
+                other_cost: 1600,
+                otherQ: 160,
                 SupplierId: supplementRecords[1].id
             }
         ];
