@@ -13,7 +13,7 @@ function Login() {
         e.preventDefault();
 
         try {
-            const res = await axios.post('/users/login', { email, password });
+            const res = await axios.post('http://rda-e-job-card.vercel.app/api/users/login', { email, password });
             
             if (res && res.data) {
                 localStorage.setItem('role', res.data.role);

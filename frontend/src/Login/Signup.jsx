@@ -33,7 +33,7 @@ function Signup() {
 
         try {
             console.log('Data being sent:', formData);  // Log the data being sent
-            const res = await axios.post('http://localhost:8081/api/users/signup', formData); // Adjust URL to match backend route
+            const res = await axios.post('http://rda-e-job-card.vercel.app/api/users/signup', formData); // Adjust URL to match backend route
             alert("Signup successful, please login.");
             navigate('/');
         } catch (err) {
