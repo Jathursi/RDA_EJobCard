@@ -39,7 +39,7 @@ function Suppliment() {
   try {
     await axios({
       method: 'post',
-      url: `http://localhost:8081/api/sup/Supinsert/${id}`,
+      url: `http://rda-e-job-card.vercel.app/api/sup/Supinsert/${id}`,
       data: {
         ...values,
         otherDetails: filteredOtherDetails,

@@ -7,7 +7,7 @@ function Home({ searchTerm }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:8081/api/reg/Regist', { withCredentials: true })
+    axios.get('http://rda-e-job-card.vercel.app/api/reg/Regist', { withCredentials: true })
       .then((response) => {
         setData(response.data);
       })

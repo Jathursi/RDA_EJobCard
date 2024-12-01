@@ -12,7 +12,7 @@ function UserEdit() {
 
   useEffect(() => {
     // Send the token in cookies (if already set during login)
-    axios.get(`http://localhost:8081/api/users/log/${id}`, { withCredentials: true })
+    axios.get(`http://rda-e-job-card.vercel.app/api/users/log/${id}`, { withCredentials: true })
       .then(response => {
         setData(response.data);
       })
@@ -33,7 +33,7 @@ const handleUpdate = async (e) => {
   e.preventDefault();
 
   try {
-    await axios.put(`http://localhost:8081/api/users/logup/${id}`, data, { withCredentials: true });
+    await axios.put(`http://rda-e-job-card.vercel.app/api/users/logup/${id}`, data, { withCredentials: true });
     alert('User data updated successfully');
   } catch (err) {
     console.error('Error updating user data:', err);

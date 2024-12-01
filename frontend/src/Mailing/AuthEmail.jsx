@@ -13,10 +13,10 @@ const AuthEmail = () => {
     useEffect(() => {
         const fetchResourcesAndImages = async () => {
             try {
-                const res1 = await axios.get(`http://localhost:8081/api/resource/resources/${id}`);
+                const res1 = await axios.get(`http://rda-e-job-card.vercel.app/api/resource/resources/${id}`);
                 setResources(res1.data);
 
-                const res2 = await axios.get(`http://localhost:8081/api/email/get-emailattach/${id}`);
+                const res2 = await axios.get(`http://rda-e-job-card.vercel.app/api/email/get-emailattach/${id}`);
                 console.log('Fetched email data:', res2.data);
                 setEmailData(res2.data);
             } catch (error) {
@@ -58,7 +58,7 @@ const AuthEmail = () => {
 
         console.log('Sending email with formData:', formData);
 
-        axios.post('http://localhost:8081/api/email/send-emailattach', formData)
+        axios.post('http://rda-e-job-card.vercel.app/api/email/send-emailattach', formData)
             .then(response => {
                 alert('Email sent successfully!');
                 console.log('Email sent response:', response.data);

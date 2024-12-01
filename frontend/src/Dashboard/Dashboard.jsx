@@ -12,7 +12,7 @@ function Dashboard({ searchTerm }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://localhost:8081/api/users/sign');
+        const res = await axios.get('http://rda-e-job-card.vercel.app/api/users/sign');
         setData(res.data);
       } catch (err) {
         console.error('Error fetching data:', err);
@@ -25,7 +25,7 @@ function Dashboard({ searchTerm }) {
     e.preventDefault();
     e.stopPropagation(); // Prevent navigation to home page
     try {
-      await axios.put(`http://localhost:8081/api/users/update-approval/${id}`, { approval: approvalStatus });
+      await axios.put(`http://rda-e-job-card.vercel.app/api/users/update-approval/${id}`, { approval: approvalStatus });
       setData((prevData) =>
         prevData.map((item) =>
           item.id === id ? { ...item, approval: approvalStatus } : item

@@ -18,7 +18,7 @@ function Completion() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`http://localhost:8081/api/comp/comp/${id}`);
+                const res = await axios.get(`http://rda-e-job-card.vercel.app/api/comp/comp/${id}`);
                 console.log('Completion Data:', res.data);
 
                 if (res.data && res.data.length > 0) {
@@ -41,7 +41,7 @@ function Completion() {
 
     const handleUpdate = (e) => {
         e.preventDefault();
-        const url = `http://localhost:8081/api/comp/${isUpdate ? 'comp' : 'Cominsert'}/${id}`;
+        const url = `http://rda-e-job-card.vercel.app/api/comp/${isUpdate ? 'comp' : 'Cominsert'}/${id}`;
         const request = isUpdate ? axios.put : axios.post;
 
         request(url, values)

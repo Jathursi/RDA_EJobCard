@@ -6,7 +6,7 @@ function Feeds() {
     const [averageRating, setAverageRating] = useState(0);
 
     useEffect(() => {
-        axios.get('http://localhost:8081/api/feedback/feedbacks', { withCredentials: true })
+        axios.get('http://rda-e-job-card.vercel.app/api/feedback/feedbacks', { withCredentials: true })
             .then(response => {
                 const feedbackData = response.data;
                 setFeedbacks(feedbackData);

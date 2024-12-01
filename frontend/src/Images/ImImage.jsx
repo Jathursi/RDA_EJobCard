@@ -25,7 +25,7 @@ const ImImage = () => {
   // Fetch images by id
   const fetchImages = useCallback(async () => {
     try {
-      const response = await axios.get(`http://localhost:8081/api/images/imimage/${id}`);
+      const response = await axios.get(`http://rda-e-job-card.vercel.app/api/images/imimage/${id}`);
       console.log('Fetched Images:', response.data); // Log the fetched images for debugging
       setPreviewaft(response.data); // Set the fetched images to previewaft state
     } catch (error) {
@@ -51,7 +51,7 @@ const ImImage = () => {
     formData.append('customName', customName);
 
     try {
-      const response = await axios.post(`http://localhost:8081/api/images/uploadImp/${id}`, formData, {
+      const response = await axios.post(`http://rda-e-job-card.vercel.app/api/images/uploadImp/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -70,7 +70,7 @@ const ImImage = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8081/api/images/deleteimp/${id}`);
+      await axios.delete(`http://rda-e-job-card.vercel.app/api/images/deleteimp/${id}`);
       alert("Image deleted successfully");
       fetchImages(); // Refresh the list of images after deletion
     } catch (error) {

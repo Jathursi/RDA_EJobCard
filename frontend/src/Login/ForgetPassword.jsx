@@ -10,7 +10,7 @@ function ForgotPassword() {
 
   const handleSendOtp = async () => {
     try {
-      await axios.post('http://localhost:8081/api/users/send-otp', { email });
+      await axios.post('http://rda-e-job-card.vercel.app/api/users/send-otp', { email });
       setOtpSent(true);
       alert('OTP sent to your email.');
     } catch (error) {
@@ -21,7 +21,7 @@ function ForgotPassword() {
 
   const handleResetPassword = async () => {
     try {
-      await axios.post('http://localhost:8081/api/users/reset-password', { email, otp, newPassword });
+      await axios.post('http://rda-e-job-card.vercel.app/api/users/reset-password', { email, otp, newPassword });
       alert('Password updated successfully.');
       navigate('/');
     } catch (error) {

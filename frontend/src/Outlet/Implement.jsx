@@ -65,7 +65,7 @@ function Implement() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`http://localhost:8081/api/imp/Imview/${id}`);
+                const res = await axios.get(`http://rda-e-job-card.vercel.app/api/imp/Imview/${id}`);
                 if (res.data && res.data.length > 0) {
                     const implementData = res.data[0];
                     setData(implementData);
@@ -90,7 +90,7 @@ function Implement() {
     useEffect(() => {
         const fetchLabData = async () => {
             try {
-                const res = await axios.get(`http://localhost:8081/api/imp/ImviewLab/${id}`);
+                const res = await axios.get(`http://rda-e-job-card.vercel.app/api/imp/ImviewLab/${id}`);
                 if (res.data && Array.isArray(res.data) && res.data.length > 0) {
                     setLabourDetails(res.data);
                 }
@@ -104,7 +104,7 @@ function Implement() {
     useEffect(() => {
         const fetchMaterialData = async () => {
             try {
-                const res = await axios.get(`http://localhost:8081/api/imp/ImviewMat/${id}`);
+                const res = await axios.get(`http://rda-e-job-card.vercel.app/api/imp/ImviewMat/${id}`);
                 if (res.data && Array.isArray(res.data) && res.data.length > 0) {
                     setMatcost(res.data);
                 }
@@ -126,8 +126,8 @@ function Implement() {
         const token = localStorage.getItem('token');
 
         const url = isInitialSubmission
-            ? `http://localhost:8081/api/imp/Iminsert/${id}`
-            : `http://localhost:8081/api/imp/Imput/${id}`;
+            ? `http://rda-e-job-card.vercel.app/api/imp/Iminsert/${id}`
+            : `http://rda-e-job-card.vercel.app/api/imp/Imput/${id}`;
 
         const method = isInitialSubmission ? 'post' : 'put';
 

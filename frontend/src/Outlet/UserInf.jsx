@@ -20,7 +20,7 @@ function UserInf() {
 
     // Fetch data /use/:book_id
     useEffect(() => {
-    axios.get(`http://localhost:8081/api/userdet/use/${book_id}`)
+    axios.get(`http://rda-e-job-card.vercel.app/api/userdet/use/${book_id}`)
         .then(response => {
             console.log('Fetched Data:', response.data);
             const fetchedFields = response.data.map((field) => ({
@@ -39,7 +39,7 @@ function UserInf() {
     const handleSubmit = (event) => {
         event.preventDefault();
         // Wrap fields in userInfo and include book_id in the request body
-        axios.post(`http://localhost:8081/api/userdet/use/${book_id}`, { userInfo: fields })
+        axios.post(`http://rda-e-job-card.vercel.app/api/userdet/use/${book_id}`, { userInfo: fields })
             .then(response => {
                 console.log('Submission Response:', response.data);
                 alert('User information submitted successfully');

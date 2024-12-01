@@ -34,8 +34,8 @@ function Others() {
     };
 
     const url = isInitialSubmission
-      ? `http://localhost:8081/api/other/Otherinsert/${id}`
-      : `http://localhost:8081/api/other/Otherupdate/${id}`;
+      ? `http://rda-e-job-card.vercel.app/api/other/Otherinsert/${id}`
+      : `http://rda-e-job-card.vercel.app/api/other/Otherupdate/${id}`;
 
     const method = isInitialSubmission ? 'post' : 'put';
 
@@ -72,22 +72,22 @@ function Others() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const otherResponse = await axios.get(`http://localhost:8081/api/other/Otherother/${id}`);
+        const otherResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/other/Otherother/${id}`);
         setOtherDetails(otherResponse.data || []);
 
-        const stockResponse = await axios.get(`http://localhost:8081/api/other/OtherStock/${id}`);
+        const stockResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/other/OtherStock/${id}`);
         setStockDetails(stockResponse.data || []);
 
-        const macResponse = await axios.get(`http://localhost:8081/api/other/OtherMac/${id}`);
+        const macResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/other/OtherMac/${id}`);
         setMacDetails(macResponse.data || []);
 
-        const welResponse = await axios.get(`http://localhost:8081/api/other/OtherWel/${id}`);
+        const welResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/other/OtherWel/${id}`);
         setWelDetails(welResponse.data || []);
 
-        const transResponse = await axios.get(`http://localhost:8081/api/other/OtherTrans/${id}`);
+        const transResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/other/OtherTrans/${id}`);
         setTransDetails(transResponse.data || []);
 
-        const sunResponse = await axios.get(`http://localhost:8081/api/other/OtherSun/${id}`);
+        const sunResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/other/OtherSun/${id}`);
         setSunDetails(sunResponse.data || []);
 
         setIsInitialSubmission(false);

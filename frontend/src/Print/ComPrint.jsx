@@ -362,7 +362,7 @@ const PrintButton = () => {
   });
 
 useEffect(() => {
-    axios.get(`http://localhost:8081/api/reg/Regist/${id}`, { withCredentials: true })
+    axios.get(`http://rda-e-job-card.vercel.app/api/reg/Regist/${id}`, { withCredentials: true })
       .then(response => {
         if (response.data && response.data.length > 0) {
           const data = response.data[0]; // Assuming the response is an array with one object
@@ -391,8 +391,8 @@ useEffect(() => {
 useEffect(() => {
   const fetchDetailsImp = async () => {
     try {
-      const res2 = await axios.get(`http://localhost:8081/api/imp/Imview/${id}`);
-      const res3 = await axios.get(`http://localhost:8081/api/comp/comp/${id}`);
+      const res2 = await axios.get(`http://rda-e-job-card.vercel.app/api/imp/Imview/${id}`);
+      const res3 = await axios.get(`http://rda-e-job-card.vercel.app/api/comp/comp/${id}`);
       setValuesImp(
         res2.data[0] || {
           Start_Date: '',
@@ -427,7 +427,7 @@ useEffect(() => {
 useEffect(() => {
   const fetchDetailsImp = async () => {
     try {
-      const res = await axios.get(`http://localhost:8081/api/Sum/SumAll/${id}`)
+      const res = await axios.get(`http://rda-e-job-card.vercel.app/api/Sum/SumAll/${id}`)
       console.log('Summary Data:', res.data);
       const data = res.data;
       setSummaryData({
@@ -468,7 +468,7 @@ useEffect(() => {
   useEffect(() => {
     const fetchMaterial = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/api/imp/ImviewMat/${id}`);
+        const response = await axios.get(`http://rda-e-job-card.vercel.app/api/imp/ImviewMat/${id}`);
         setMaterial(response.data || []); // Ensure data is set as an array
       } catch (error) {
         console.error("Error fetching material data:", error);
@@ -482,7 +482,7 @@ useEffect(() => {
   useEffect(() => {
     const fetOut = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/api/out/Outview/${id}`);
+        const response = await axios.get(`http://rda-e-job-card.vercel.app/api/out/Outview/${id}`);
         setOut(response.data || []);
       } catch (error) {
         console.error("Error fetching out data:", error);
@@ -503,7 +503,7 @@ useEffect(() => {
     formData.append('customName', fileName);
 
     try {
-      const response = await axios.post(`http://localhost:8081/api/resource/upload/${id}`, formData, {
+      const response = await axios.post(`http://rda-e-job-card.vercel.app/api/resource/upload/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

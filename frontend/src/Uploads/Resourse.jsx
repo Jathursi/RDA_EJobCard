@@ -15,7 +15,7 @@ const Resourse = () => {
 
   const fetchResources = async () => {
     try {
-      const response = await axios.get(`http://localhost:8081/api/resource/resources/${id}`);
+      const response = await axios.get(`http://rda-e-job-card.vercel.app/api/resource/resources/${id}`);
       setResources(response.data);
     } catch (error) {
       console.error('There was an error fetching the resources!', error);
@@ -37,7 +37,7 @@ const Resourse = () => {
     formData.append('customName', customName);
 
     try {
-      await axios.post(`http://localhost:8081/api/resource/upload/${id}`, formData);
+      await axios.post(`http://rda-e-job-card.vercel.app/api/resource/upload/${id}`, formData);
       alert('File uploaded successfully');
       setUpdateTrigger(!updateTrigger); // Toggle the update trigger to re-fetch resources
       setCustomName(''); // Reset custom name
@@ -54,7 +54,7 @@ const Resourse = () => {
 const handleDelete = async (id) => {
     console.log('Deleting resource with ID:', id); // Log the ID for debugging
     try {
-        await axios.delete(`http://localhost:8081/api/resource/resource/${id}`); // Fixed URL here
+        await axios.delete(`http://rda-e-job-card.vercel.app/api/resource/resource/${id}`); // Fixed URL here
         alert('Resource deleted successfully');
         setUpdateTrigger(!updateTrigger); // Trigger re-fetch to update list
     } catch (error) {

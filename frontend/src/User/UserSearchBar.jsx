@@ -9,7 +9,7 @@ const SearchBar = () => {
     e.preventDefault();
     const vehicleNum = e.target.vehicle_num.value;
 
-    axios.get(`http://localhost:8081/api/search/vehicleUser/${vehicleNum}`)
+    axios.get(`http://rda-e-job-card.vercel.app/api/search/vehicleUser/${vehicleNum}`)
       .then((response) => {
         // Redirect to the results page with the vehicle data
         navigate(`/user/details/${vehicleNum}`, { state: { vehicleData: response.data } });

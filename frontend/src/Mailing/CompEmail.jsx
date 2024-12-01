@@ -13,10 +13,10 @@ const CompEmail = () => {
     useEffect(() => {
         const fetchResourcesAndImages = async () => {
             try {
-                const res1 = await axios.get(`http://localhost:8081/api/resource/resources/${id}`);
+                const res1 = await axios.get(`http://rda-e-job-card.vercel.app/api/resource/resources/${id}`);
                 setResources(res1.data);
 
-                const res2 = await axios.get(`http://localhost:8081/api/email/get-emailattach1/${id}`);
+                const res2 = await axios.get(`http://rda-e-job-card.vercel.app/api/email/get-emailattach1/${id}`);
                 console.log('Fetched email data:', res2.data);
                 setEmailData(res2.data);
             } catch (error) {

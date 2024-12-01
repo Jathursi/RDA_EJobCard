@@ -376,31 +376,31 @@ const PrintButton = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/api/est/Estview/${id}`);
+        const response = await axios.get(`http://rda-e-job-card.vercel.app/api/est/Estview/${id}`);
         setValues(response.data[0]);
 
-        const otherResponse = await axios.get(`http://localhost:8081/api/est/Otherother/${id}`);
+        const otherResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/est/Otherother/${id}`);
         setValueOther(otherResponse.data);
 
-        const stockResponse = await axios.get(`http://localhost:8081/api/est/OtherStock/${id}`);
+        const stockResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/est/OtherStock/${id}`);
         setValueStock(stockResponse.data);
 
-        const macResponse = await axios.get(`http://localhost:8081/api/est/OtherMac/${id}`);
+        const macResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/est/OtherMac/${id}`);
         setValueMach(macResponse.data);
 
-        const welResponse = await axios.get(`http://localhost:8081/api/est/OtherWel/${id}`);
+        const welResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/est/OtherWel/${id}`);
         setValueWel(welResponse.data);
 
-        const transResponse = await axios.get(`http://localhost:8081/api/est/OtherTrans/${id}`);
+        const transResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/est/OtherTrans/${id}`);
         setValueTrans(transResponse.data);
 
-        const sunResponse = await axios.get(`http://localhost:8081/api/est/OtherSun/${id}`);
+        const sunResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/est/OtherSun/${id}`);
         setValueSup(sunResponse.data);
 
-        const matResponse = await axios.get(`http://localhost:8081/api/est/EstviewMat/${id}`);
+        const matResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/est/EstviewMat/${id}`);
         setValuesImp(matResponse.data);
 
-        const labResponse = await axios.get(`http://localhost:8081/api/est/EstviewLab/${id}`);
+        const labResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/est/EstviewLab/${id}`);
         setValuesLab(labResponse.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -412,7 +412,7 @@ const PrintButton = () => {
   useEffect(() => {
     const fetchData = async () => {
   try {
-    const suplimentresponse = await axios.get(`http://localhost:8081/api/sup/SupViewgroup/${id}`);
+    const suplimentresponse = await axios.get(`http://rda-e-job-card.vercel.app/api/sup/SupViewgroup/${id}`);
     setSup(suplimentresponse.data);
   } catch (err) {
     console.error('Error fetching data:', err);
@@ -444,7 +444,7 @@ const PrintButton = () => {
     formData.append('customName', fileName);
 
     try {
-      const response = await axios.post(`http://localhost:8081/api/resource/upload/${id}`, formData, {
+      const response = await axios.post(`http://rda-e-job-card.vercel.app/api/resource/upload/${id}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

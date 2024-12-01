@@ -30,7 +30,7 @@ function UserFeedback() {
         setResponseMessage('Name and Email are required.');
         return;
       }
-      const response = await axios.post('http://localhost:8081/api/feedback/feedbacks', formData);
+      const response = await axios.post('http://rda-e-job-card.vercel.app/api/feedback/feedbacks', formData);
       setResponseMessage(response.data.message);
       setFormData({ name: '', email: '', vehicle_num: '', message: '', rating: 0 }); // reset form
     } catch (error) {

@@ -18,7 +18,7 @@ function OutSource() {
     useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:8081/api/out/Outview/${id}`);
+        const res = await axios.get(`http://rda-e-job-card.vercel.app/api/out/Outview/${id}`);
         console.log('Outsource Data:', res.data); // Log the entire response to inspect
 
         // Check if the response is not empty and then update values
@@ -39,7 +39,7 @@ function OutSource() {
 
         if (isSubmitted) {
             // Update existing records
-            axios.put(`http://localhost:8081/api/out/Outupdate/${book_id}`, { values })
+            axios.put(`http://rda-e-job-card.vercel.app/api/out/Outupdate/${book_id}`, { values })
                 .then(res => {
                     console.log("Logbook entries updated successfully");
                     navigate('/Home');
@@ -49,7 +49,7 @@ function OutSource() {
                 });
         } else {
             // Initial submission
-            axios.post(`http://localhost:8081/api/out/Outinsert/${book_id}`, { values })
+            axios.post(`http://rda-e-job-card.vercel.app/api/out/Outinsert/${book_id}`, { values })
                 .then(res => {
                     console.log("Logbook entries added successfully");
                     setIsSubmitted(true); // Mark as submitted after successful post

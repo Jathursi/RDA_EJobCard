@@ -43,8 +43,8 @@ function SupEdit() {
     const token = localStorage.getItem('token');
 
     const url = isInitialSubmission
-      ? `http://localhost:8081/api/sup/Supinsert/${id}`
-      : `http://localhost:8081/api/sup/Supupdate/${id}`;
+      ? `http://rda-e-job-card.vercel.app/api/sup/Supinsert/${id}`
+      : `http://rda-e-job-card.vercel.app/api/sup/Supupdate/${id}`;
 
     const method = isInitialSubmission ? 'post' : 'put';
 
@@ -112,33 +112,33 @@ function SupEdit() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/api/sup/Supview/${id}`);
+        const response = await axios.get(`http://rda-e-job-card.vercel.app/api/sup/Supview/${id}`);
         if (response.data) {
           setValues(response.data);
         }
 
-        const otherResponse = await axios.get(`http://localhost:8081/api/sup/Otherother/${id}`);
+        const otherResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/sup/Otherother/${id}`);
         setOtherDetails(otherResponse.data);
 
-        const stockResponse = await axios.get(`http://localhost:8081/api/sup/OtherStock/${id}`);
+        const stockResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/sup/OtherStock/${id}`);
         setStockDetails(stockResponse.data);
 
-        const macResponse = await axios.get(`http://localhost:8081/api/sup/OtherMac/${id}`);
+        const macResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/sup/OtherMac/${id}`);
         setMacDetails(macResponse.data);
 
-        const welResponse = await axios.get(`http://localhost:8081/api/sup/OtherWel/${id}`);
+        const welResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/sup/OtherWel/${id}`);
         setWelDetails(welResponse.data);
 
-        const transResponse = await axios.get(`http://localhost:8081/api/sup/OtherTrans/${id}`);
+        const transResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/sup/OtherTrans/${id}`);
         setTransDetails(transResponse.data);
 
-        const sunResponse = await axios.get(`http://localhost:8081/api/sup/OtherSun/${id}`);
+        const sunResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/sup/OtherSun/${id}`);
         setSunDetails(sunResponse.data);
 
-        const matResponse = await axios.get(`http://localhost:8081/api/sup/SupviewMat/${id}`);
+        const matResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/sup/SupviewMat/${id}`);
         setMatDetails(matResponse.data);
 
-        const labResponse = await axios.get(`http://localhost:8081/api/sup/SupviewLab/${id}`);
+        const labResponse = await axios.get(`http://rda-e-job-card.vercel.app/api/sup/SupviewLab/${id}`);
         setLabDetails(labResponse.data);
       } catch (error) {
         console.error('Error fetching data:', error);

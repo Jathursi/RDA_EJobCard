@@ -8,7 +8,7 @@ function UserDetail() {
   const { vehicle_num } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:8081/api/search/vehicleUser/${vehicle_num}`)
+    axios.get(`http://rda-e-job-card.vercel.app/api/search/vehicleUser/${vehicle_num}`)
       .then((response) => {
         // Check if the response is an array and get the first element
         const vehicleData = Array.isArray(response.data) ? response.data[0] : response.data;
@@ -22,7 +22,7 @@ function UserDetail() {
   }, [vehicle_num]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8081/api/userdet/useveh/${vehicle_num}`)
+    axios.get(`http://rda-e-job-card.vercel.app/api/userdet/useveh/${vehicle_num}`)
       .then((response) => {
         setDetails(response.data);
         console.log('User details:', response.data);

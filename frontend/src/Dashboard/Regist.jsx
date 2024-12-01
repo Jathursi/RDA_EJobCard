@@ -20,7 +20,7 @@ function Regist() {
     });
 
     useEffect(() => {
-        axios.get('http://localhost:8081/api/users/me', { withCredentials: true })
+        axios.get('http://rda-e-job-card.vercel.app/api/users/me', { withCredentials: true })
             .then(response => {
                 setUserID(response.data.id);
             })
@@ -32,7 +32,7 @@ function Regist() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const formData = { ...values, userID };
-        axios.post('http://localhost:8081/api/users/Logbook', formData, { withCredentials: true })
+        axios.post('http://rda-e-job-card.vercel.app/api/users/Logbook', formData, { withCredentials: true })
             .then(res => {
                 console.log("Logbook entry added successfully");
                 navigate('/Home');

@@ -35,8 +35,8 @@ function Estimation() {
     const token = localStorage.getItem('token');
 
     const url = isInitialSubmission
-      ? `http://localhost:8081/api/est/Estinsert/${id}`
-      : `http://localhost:8081/api/est/Estupdate/${id}`;
+      ? `http://rda-e-job-card.vercel.app/api/est/Estinsert/${id}`
+      : `http://rda-e-job-card.vercel.app/api/est/Estupdate/${id}`;
 
     const method = isInitialSubmission ? 'post' : 'put';
 
