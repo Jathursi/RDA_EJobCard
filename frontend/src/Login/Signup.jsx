@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import axiosInstance from '../api';
 function Signup() {
     const [formData, setFormData] = useState({
         first_Name: '',
@@ -33,7 +33,7 @@ function Signup() {
 
         try {
             console.log('Data being sent:', formData);  // Log the data being sent
-            const res = await axiosInstance.post('http://localhost:8081/api/users/signup', formData); // Adjust URL to match backend route
+            const res = await axios.post('http://localhost:8081/api/users/signup', formData); // Adjust URL to match backend route
             alert("Signup successful, please login.");
             navigate('/');
         } catch (err) {

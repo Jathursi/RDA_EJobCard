@@ -18,6 +18,7 @@ const corsOptions = {
       'http://localhost:3000',
       'http://localhost:3001',
       'https://jathursi.github.io', // Add GitHub Pages domain
+      
     ];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
