@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import axiosInstance from '../api';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -13,7 +14,7 @@ function Login() {
         e.preventDefault();
 
         try {
-            const res = await axios.post('http://localhost:8081/api/users/login', { email, password });
+            const res = await axiosInstance.post('/users/login', { email, password });
             
             if (res && res.data) {
                 localStorage.setItem('role', res.data.role);
