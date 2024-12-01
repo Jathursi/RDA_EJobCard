@@ -49,6 +49,7 @@ function App() {
           <Route path="/*" element={<Admin />} />
           <Route path="/dashes/:id" element={<Navigate to='implement'/>} />
           <Route path="/dashes/:id" element={<Dash />}>
+      
             <Route path="implement" element={<Implement />} />
             <Route path="estimation" element={<Estimation />} />
             <Route path="completion" element={<Completion />} />
