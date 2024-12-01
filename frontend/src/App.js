@@ -41,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter basename='RDA_EJobCard'>
+      <BrowserRouter basename="RDA_EJobCard">
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
