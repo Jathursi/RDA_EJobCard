@@ -32,7 +32,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 
 function App() {
-  const user = null;
   // Detect system color scheme preference and apply it
   useEffect(() => {
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -47,7 +46,7 @@ function App() {
           <Route path="/forget-password" element={<ForgetPassword />} />
           <Route path="/signup" element={<Signup />} />
            {/* Admin Routes */}
-          <Route path="/*" element={user ? <Admin /> : <Navigate to="/" />} />
+          <Route path="/*" element={<Admin />}/>
           <Route path="/dashes/:id" element={<Navigate to='implement'/>} />
           <Route path="/dashes/:id" element={<Dash />}>
             <Route path="implement" element={<Implement />} />
