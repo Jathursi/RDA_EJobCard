@@ -3,7 +3,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import routes from './routes/index.js'; // Import routes
 import userRoutes from './routes/userRoutes.js'; // Import user routes
-import sequelize from './config/sequelize.js';
+import sequelize from './Config/sequelize.js';
 // import impRoute from './routes/impRoute.js';
 import dotenv from 'dotenv';
 
@@ -14,8 +14,12 @@ app.use(cookieParser());
 
 const corsOptions = {
   origin: function (origin, callback) {
-    const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+    const allowedOrigins = [
+      'http://localhost:3000',
+      'http://localhost:3001',
+      'https://jathursi.github.io', // Add GitHub Pages domain
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
@@ -25,6 +29,7 @@ const corsOptions = {
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
+
 
 app.use(cors(corsOptions));
 
